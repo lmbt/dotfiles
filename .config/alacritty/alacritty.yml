@@ -1,0 +1,95 @@
+#
+# modified 2021-06-28
+#
+
+env:
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
+window:
+  # Spread additional padding evenly around the terminal content.
+  padding:
+    x: 6
+    y: 6
+  # Remove buttons
+  # Dimensions if not SimpleFullscreen
+  dimensions:
+    columns: 140
+    lines: 38
+  opacity: 0.94
+
+cursor:
+  # Block Underline or Beam
+  style: Block
+
+font:
+  normal:
+    # Needs to be powerline font if using zsh theme with powerline
+    family: Fira Code
+    style: Regular
+  bold:
+    style: Regular
+  italic:
+    style: Regular
+  
+  # Font size
+  size: 12
+
+  # Better font rendering for mac
+  use_thin_strokes: true
+
+# Colors (Hyper)
+colors:
+  # Default colors
+  primary:
+    background: '#181c30'
+    foreground: '#ffffff'
+  cursor:
+    text: '#ffffff'
+    cursor: '#ffffff'
+
+  # Normal colors
+  normal:
+    black:   '#1b1d1e'
+    red:     '#f92672'
+    green:   '#82b414'
+    yellow:  '#fd971f'
+    blue:    '#0066cc'
+    magenta: '#8c54f3'
+    cyan:    '#465457'
+    white:   '#ccccc6'
+
+  # Bright colors
+  bright:
+    black:   '#505354'
+    red:     '#ff5995'
+    green:   '#b6e354'
+    yellow:  '#feed6c'
+    blue:    '#333399'
+    magenta: '#9e6ffe'
+    cyan:    '#899ca1'
+    white:   '#f8f8f2'
+
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When true, selected text will be copied to the primary clipboard
+  save_to_clipboard: true
+
+# Login shell with arguments
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
+# Startup directory, unset or None for home directory
+working_directory: None
+
+#key_bindings:
